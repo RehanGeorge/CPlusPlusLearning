@@ -1,0 +1,25 @@
+# Codelite
+.codelite/
+.cache/
+*.workspace
+*.project
+*.mk
+
+# Build artifacts
+build-*/
+*.o
+*.obj
+*.so
+*.dll
+*.exe
+*.pdb
+Makefile
+compile_commands.json
+
+# Binaries
+bin/
+lib/
+
+# OS junk
+.DS_Store
+Thumbs.db
