@@ -10,7 +10,7 @@ int main() {
     
     cin >> length >> width;
     
-    double area = length * width;
+    double area {length * width};
     
     cout << "The area of the room is " << area << endl;
     
