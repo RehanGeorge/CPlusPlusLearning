@@ -24,11 +24,14 @@ int main() {
     cout << "Estimate for carpet cleaning service\n";
     cout << "Number of small rooms: " << small_rooms << endl;
     cout << "Number of large rooms: " << large_rooms << endl;
+    
     cout << "Price per small room: $" << price_per_small_room << endl;
     cout << "Price per large room: $" << price_per_large_room << endl;
+    
     int total_cost {(small_rooms * price_per_small_room) + (large_rooms * price_per_large_room)};
     cout << "Cost: $" << total_cost << endl;
     cout << "Tax: $" << total_cost * tax_rate << endl;
+    
     cout << "====================================" << endl;
     cout << "Total estimate: $" << total_cost + (total_cost * tax_rate) << endl;
     cout << "This estimate is valid for " << estimate_expiry << "days" << endl;
