@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+    /*
     cout << "Enter the text you want to encrypt: ";
     string alphabet {"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"};
     string key {"XZNLWEBGJHQDYVTKFUOMPCIASRxznlwebgjhqdyvtkfuompciasr"};
@@ -35,4 +36,31 @@ int main()
     }
     
     cout << "The decrypted text is: " << decrypted_text << endl;
+    */
+     
+     // Letter pyramid
+     cout << "Enter the string you want to create a pyramid for: " << endl;
+     
+     string input_text {};
+     getline(cin, input_text);
+     
+     size_t total_length = input_text.length();
+     
+     for (size_t i {0}; i < total_length; i++) {
+         size_t num_spaces = total_length - (i + 1); 
+         for (size_t space_count {0}; space_count < num_spaces; space_count++) {
+            cout << " ";
+            }
+        
+         for (size_t j {0}; j <= i; j++) {
+             cout << input_text[j];
+         }
+         
+         if (i > 0) {
+             for (size_t k {i - 1}; k < i; k--) {
+                 cout << input_text[k];
+             }
+         }
+         cout << endl;
+     }
 }
