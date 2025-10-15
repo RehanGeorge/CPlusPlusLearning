@@ -8,4 +8,12 @@ int main()
     
     cout << num1 << endl;
     cout << &num1 << endl;
+    
+    long long *p;
+    cout << p << endl;
+    cout << &p << endl;
+    cout << sizeof(p) << endl;
+    
+    p = nullptr;
+    cout << p << endl;
 }
