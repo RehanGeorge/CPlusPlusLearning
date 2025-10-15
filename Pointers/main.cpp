@@ -1,7 +1,11 @@
-#include <stdio.h>
+#include <iostream>
 
-int main(int argc, char **argv)
+using namespace std;
+
+int main()
 {
-	printf("hello world\n");
-	return 0;
+    int num1{};
+    
+    cout << num1 << endl;
+    cout << &num1 << endl;
 }
