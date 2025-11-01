@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    /*
     int num1{};
     
     cout << num1 << endl;
@@ -38,4 +39,22 @@ int main()
     cout << temp_ptr << endl;
     
     delete [] temp_ptr;
+     */
+     
+     // Create reference
+     int num {100};
+     int &ref {num};
+     
+     cout << num << endl;
+     cout << "Ref to num: " << ref << endl;
+     
+     cout << "Set num to 200 and print again" << endl;
+     num = 200;
+     cout << num << endl;
+     cout << "Ref to num: " << ref << endl;
+     
+     cout << "Set ref to 300 and print again" << endl;
+     ref = 300;
+     cout << num << endl;
+     cout << "Ref to num: " << ref << endl;
 }
