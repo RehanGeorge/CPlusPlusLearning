@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 using namespace std;
 
@@ -41,20 +42,35 @@ int main()
     delete [] temp_ptr;
      */
      
-     // Create reference
-     int num {100};
-     int &ref {num};
+    // Create reference
+    int num {100};
+    int &ref {num};
+    
+    cout << num << endl;
+    cout << "Ref to num: " << ref << endl;
+    
+    cout << "Set num to 200 and print again" << endl;
+    num = 200;
+    cout << num << endl;
+    cout << "Ref to num: " << ref << endl;
+    
+    cout << "Set ref to 300 and print again" << endl;
+    ref = 300;
+    cout << num << endl;
+    cout << "Ref to num: " << ref << endl;
      
-     cout << num << endl;
-     cout << "Ref to num: " << ref << endl;
+    vector<string> stooges {"Larry", "Moe", "Curly"};
      
-     cout << "Set num to 200 and print again" << endl;
-     num = 200;
-     cout << num << endl;
-     cout << "Ref to num: " << ref << endl;
-     
-     cout << "Set ref to 300 and print again" << endl;
-     ref = 300;
-     cout << num << endl;
-     cout << "Ref to num: " << ref << endl;
+    for (auto str: stooges)
+         str = "Funny";         // str is a COPY of the vector element
+         
+    for (auto str: stooges)
+        cout << str << endl;
+        
+    cout << "\n-------------------------" << endl;
+    for (auto &str: stooges)
+        str = "Funny";
+        
+    for (auto str: stooges)
+        cout << str << endl;
 }
