@@ -71,6 +71,6 @@ int main()
     for (auto &str: stooges)
         str = "Funny";
         
-    for (auto str: stooges)
+    for (auto const &str: stooges)
         cout << str << endl;
 }
