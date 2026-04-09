@@ -24,7 +24,12 @@ public:
     // methods
     bool deposit(double bal) {balance += bal; cout << "In deposit" << endl; return true; }
     bool withdraw(double bal) {balance -= bal; cout << "In withdraw" << endl; return true; }
+    double check();
 };
+
+double Account::check() {
+    return balance;
+}
 
 int main() {
     Account frank_account;
@@ -32,6 +37,7 @@ int main() {
     frank_account.balance = 5000.0;
     frank_account.deposit(1000.0);
     frank_account.withdraw(500.0);
+    cout << frank_account.check() << endl;
     
     Account jim_account;
     
