@@ -28,6 +28,22 @@ public:
     }
 };
 
+class PlayerWithName {
+private:
+    string name;
+    int level;
+    
+public:
+    void set_name(string n);
+    void set_level(int l);
+        
+    PlayerWithName(string n, int l) {
+        name = n;
+        level = l;
+        cout << "Player " << name << " created with level " << level;
+    }
+};
+
 int main()
 {
 	{
@@ -52,4 +68,7 @@ int main()
     
     delete enemy;
     delete level_boss;
+    
+    PlayerWithName *x = new PlayerWithName("Rehan", 1);
+    delete x;
 }
