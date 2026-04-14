@@ -28,6 +28,17 @@ public:
     }
 };
 
+class CleanPlayer {
+private:
+std::string name;
+int health;
+int xp;
+public:
+CleanPlayer();
+CleanPlayer(std::string name);
+CleanPlayer(std::string name, int val, int xp);
+}
+
 class PlayerWithName {
 private:
     string name;
