@@ -45,6 +45,12 @@ health = 0;
 xp = 0;
 }
 
+CleanPlayer::CleanPlayer(string n) {
+name = n;
+health = 0;
+xp = 0;
+}
+
 class PlayerWithName {
 private:
     string name;
