@@ -39,10 +39,9 @@ CleanPlayer(std::string name);
 CleanPlayer(std::string name, int val, int xp);
 }
 
-CleanPlayer::CleanPlayer() {
-name = "name";
-health = 0;
-xp = 0;
+CleanPlayer::CleanPlayer()
+ : name{"None"}, health{0}, xp{0} {
+
 }
 
 CleanPlayer::CleanPlayer(string n) {
