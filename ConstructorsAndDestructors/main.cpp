@@ -40,18 +40,18 @@ public:
 };
 
 CleanPlayer::CleanPlayer()
- : name{"None"}, health{0}, xp{0} {
-
+ : CleanPlayer {"None", 0, 0} {
+     cout << "No-args constructor for Clean Player" << endl;
 }
 
 CleanPlayer::CleanPlayer(string n)
-    : name{n}, health{0}, xp{0} {
-        
+    : CleanPlayer {n, 0, 0} {
+     cout << "1 arg constructor for Clean Player" << endl;
 }
 
 CleanPlayer::CleanPlayer(string n, int hp, int exp)
     : name{n}, health{hp}, xp{exp} {
-
+     cout << "3 arg constructor for Clean Player" << endl;
 }
 
 class PlayerWithName {
@@ -66,7 +66,7 @@ public:
     PlayerWithName(string n, int l) {
         name = n;
         level = l;
-        cout << "Player " << name << " created with level " << level;
+        cout << "Player " << name << " created with level " << level << endl;
     }
 };
 
@@ -97,4 +97,8 @@ int main()
     
     PlayerWithName *x = new PlayerWithName("Rehan", 1);
     delete x;
+    
+    CleanPlayer oneCleanPlayer = CleanPlayer();
+    CleanPlayer twoCleanPlayer = CleanPlayer("Rehan");
+    CleanPlayer threeCleanPlayer = CleanPlayer("RehanWithExp", 1, 1);
 }
