@@ -34,23 +34,11 @@ private:
     int health;
     int xp;
 public:
-    CleanPlayer();
-    CleanPlayer(std::string name);
-    CleanPlayer(std::string name, int val, int xp);
+    CleanPlayer(std::string name_val = "None", int health_val = 0, int xp_val = 0);
 };
 
-CleanPlayer::CleanPlayer()
- : CleanPlayer {"None", 0, 0} {
-     cout << "No-args constructor for Clean Player" << endl;
-}
-
-CleanPlayer::CleanPlayer(string n)
-    : CleanPlayer {n, 0, 0} {
-     cout << "1 arg constructor for Clean Player" << endl;
-}
-
-CleanPlayer::CleanPlayer(string n, int hp, int exp)
-    : name{n}, health{hp}, xp{exp} {
+CleanPlayer::CleanPlayer(string name_val, int healths_val, int xp_val)
+    : name{name_val}, health{healths_val}, xp{xp_val} {
      cout << "3 arg constructor for Clean Player" << endl;
 }
 
@@ -98,7 +86,8 @@ int main()
     PlayerWithName *x = new PlayerWithName("Rehan", 1);
     delete x;
     
-    CleanPlayer oneCleanPlayer = CleanPlayer();
-    CleanPlayer twoCleanPlayer = CleanPlayer("Rehan");
+    CleanPlayer zeroCleanPlayer = CleanPlayer();
+    CleanPlayer oneCleanPlayer = CleanPlayer("Rehan");
+    CleanPlayer twoCleanPlayer = CleanPlayer("Rehan", 10);
     CleanPlayer threeCleanPlayer = CleanPlayer("RehanWithExp", 1, 1);
 }
