@@ -30,30 +30,28 @@ public:
 
 class CleanPlayer {
 private:
-std::string name;
-int health;
-int xp;
+    std::string name;
+    int health;
+    int xp;
 public:
-CleanPlayer();
-CleanPlayer(std::string name);
-CleanPlayer(std::string name, int val, int xp);
-}
+    CleanPlayer();
+    CleanPlayer(std::string name);
+    CleanPlayer(std::string name, int val, int xp);
+};
 
 CleanPlayer::CleanPlayer()
  : name{"None"}, health{0}, xp{0} {
 
 }
 
-CleanPlayer::CleanPlayer(string n) {
-name = n;
-health = 0;
-xp = 0;
+CleanPlayer::CleanPlayer(string n)
+    : name{n}, health{0}, xp{0} {
+        
 }
 
-CleanPlayer::CleanPlayer(string n, int hp, int exp) {
-name = n;
-health = hp;
-xp = exp;
+CleanPlayer::CleanPlayer(string n, int hp, int exp)
+    : name{n}, health{hp}, xp{exp} {
+
 }
 
 class PlayerWithName {
