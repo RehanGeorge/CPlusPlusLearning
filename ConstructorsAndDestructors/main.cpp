@@ -3,91 +3,48 @@
 
 using namespace std;
 
-class Player
-{
+class Player {
 private:
     std::string name;
     int health;
     int xp;
 public:
-    void set_name(std::string name_val) {
-        name = name_val;
-    }
-    // Overloaded Constructors
-    Player() {
-        cout << "No args constructor called" << endl;
-    }
-    Player(std::string name) {
-        cout << "String arg constructor called" << endl;
-    }
-    Player(std::string name, int health, int xp) {
-        cout << "Three args constructor called" << endl;
-    }
-    ~Player() {
-        cout << "Destructor called for " << name << endl;
-    }
+    std::string get_name() { return name; }
+    int get_health() { return health; }
+    int get_xp() { return xp; }
+    Player(std::string name_val = "None", int health_val = 0, int xp_val = 0);
+    // Copy constructor
+    Player(const Player &source);
+    // Destructor
+    ~Player() { cout << "Destructor called for: " << name << endl; }
 };
 
-class CleanPlayer {
-private:
-    std::string name;
-    int health;
-    int xp;
-public:
-    CleanPlayer(std::string name_val = "None", int health_val = 0, int xp_val = 0);
-};
-
-CleanPlayer::CleanPlayer(string name_val, int healths_val, int xp_val)
+Player::Player(string name_val, int healths_val, int xp_val)
     : name{name_val}, health{healths_val}, xp{xp_val} {
-     cout << "3 arg constructor for Clean Player" << endl;
+        cout << "3 arg constructor for Clean Player" << endl;
 }
 
-class PlayerWithName {
-private:
-    string name;
-    int level;
-    
-public:
-    void set_name(string n);
-    void set_level(int l);
-        
-    PlayerWithName(string n, int l) {
-        name = n;
-        level = l;
-        cout << "Player " << name << " created with level " << level << endl;
-    }
-};
+Player::Player(const Player &source)
+    // Alternatively, use delegated constructor for this
+//    : Player{source.name, source.health, source.xp} {
+    : name{source.name}, health{source.health}, xp{source.xp} {
+        cout << "Copy constructor - made copy of: " << source.name << endl;
+}
+
+void display_player(Player p) {
+    cout << "Name: " << p.get_name() << endl;
+    cout << "Health: " << p.get_health() << endl;
+    cout << "XP: " << p.get_xp() << endl;
+}
 
 int main()
 {
-	{
-        Player slayer;
-        slayer.set_name("Slayer");
-    }
+    Player empty;
     
-    {
-        Player frank;
-        frank.set_name("Frank");
-        Player hero("Hero");
-        hero.set_name("Hero");
-        Player villain("Villain", 100, 12);
-        villain.set_name("Villain");
-    }
+    display_player(empty);
     
-    Player *enemy = new Player;
-    enemy->set_name("Enemy");
-    
-    Player *level_boss = new Player("Level Boss", 1000, 300);
-    level_boss->set_name("Level Boss");
-    
-    delete enemy;
-    delete level_boss;
-    
-    PlayerWithName *x = new PlayerWithName("Rehan", 1);
-    delete x;
-    
-    CleanPlayer zeroCleanPlayer = CleanPlayer();
-    CleanPlayer oneCleanPlayer = CleanPlayer("Rehan");
-    CleanPlayer twoCleanPlayer = CleanPlayer("Rehan", 10);
-    CleanPlayer threeCleanPlayer = CleanPlayer("RehanWithExp", 1, 1);
+    Player zeroCleanPlayer = Player();
+    Player oneCleanPlayer = Player("Rehan");
+    Player twoCleanPlayer = Player("Rehan", 10);
+    Player threeCleanPlayer = Player("RehanWithExp", 1, 1);
 }
