@@ -8,11 +8,11 @@ class Movies
 private:
     std::vector<Movie> movies;
 public:
-    void add_movie(std::string name, Rating rating, int watched);
-    void increment_watch_count(std::string name);
+    void add_movie(const std::string& name, Rating rating, int watched);
+    void increment_watch_count(const std::string& name);
+    void display() const;
     Movies();
     ~Movies();
-
 };
 
 #endif // MOVIES_H
